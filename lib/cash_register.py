@@ -27,7 +27,7 @@ class CashRegister:
 
     def apply_discount(self):
         if self.discount > 0:
-            self.total = self._total * (100 - self._discount) / 100
+            self.total = self.total * (100 - self.discount) / 100
         else:
             print("There is no discount to apply.")
 
