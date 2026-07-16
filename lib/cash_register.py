@@ -32,7 +32,7 @@ class CashRegister:
     def apply_discount(self):
         if self.discount > 0:
             self.total = float(self.total * (100 - self.discount) / 100)
-            print(f"After the discount, the total comes to ${self.total:.1f}.")
+            print(f"After the discount, the total comes to ${self.total}.")
         else:
             print("There is no discount to apply.")
 
@@ -51,18 +51,18 @@ class CashRegister:
             print("You have no previous transactions")
 
 
-# james_transactions = CashRegister()
-# james_transactions.add_item("Orange", 30, 3)
-# james_transactions.add_item("Milk", 65, 2)
-# james_transactions.add_item("Rice", 349, 1)
+james_transactions = CashRegister()
+james_transactions.add_item("Orange", 30, 3)
+james_transactions.add_item("Milk", 65, 2)
+james_transactions.add_item("Rice", 349, 1)
 # print(james_transactions._previous_transactions)
 # print(james_transactions._items)
 # print(james_transactions.discount)
-# print(james_transactions._total)
-# james_transactions.discount = 25
+print(james_transactions.total)
+james_transactions.discount = 25
 # print(james_transactions.discount)
 # print(james_transactions._total)
-# james_transactions.apply_discount()
+james_transactions.apply_discount()
 # print(james_transactions.discount)
 # print(james_transactions._total)
 # james_transactions.void_last_transaction()
