@@ -38,13 +38,10 @@ class CashRegister:
 
     def void_last_transaction(self):
         if len(self.previous_transactions) > 0:
-            self.total = 0
-            for transaction in self.previous_transactions:
-                self.total += transaction["price"] * transaction["quantity"]
-
             last_transaction = self.previous_transactions[-1]
 
-            self.items.remove(last_transaction["item"])
+            for _ in range(last_transaction["quantity"]):
+                self.items.remove(last_transaction["item"])
             self.total -= last_transaction["price"] * last_transaction["quantity"]
             self.previous_transactions.remove(last_transaction)
         else:
@@ -52,21 +49,21 @@ class CashRegister:
 
 
 james_transactions = CashRegister()
-james_transactions.add_item("macbook air", 1000)
-# james_transactions.add_item("Milk", 65, 2)
+james_transactions.add_item("apple", 0.99)
+james_transactions.add_item("tomato", 1.76)
 # james_transactions.add_item("Rice", 349, 1)
-# print(james_transactions._previous_transactions)
+print(james_transactions.previous_transactions)
 # print(james_transactions._items)
 # print(james_transactions.discount)
-# print(james_transactions.total)
-james_transactions.discount = 20
+print(james_transactions.total)
+# james_transactions.discount = 20
 # print(james_transactions.discount)
 # print(james_transactions._total)
-james_transactions.apply_discount()
+# james_transactions.apply_discount()
 # print(james_transactions.discount)
 # print(james_transactions._total)
-# james_transactions.void_last_transaction()
-# print(james_transactions._previous_transactions)
+james_transactions.void_last_transaction()
+print(james_transactions.previous_transactions)
 # print(james_transactions._items)
 # print(james_transactions.discount)
-# print(james_transactions._total)
+print(james_transactions.total)
