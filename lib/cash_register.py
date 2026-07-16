@@ -10,12 +10,12 @@ class CashRegister:
 
     @property
     def discount(self):
-        return self.discount
+        return self._discount
 
     @discount.setter
     def discount(self, value):
         if type(value) is int and 0 <= value <= 100:
-            self.discount = value
+            self._discount = value
         else:
             print("Not valid discount")
 
