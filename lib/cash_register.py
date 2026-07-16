@@ -20,7 +20,11 @@ class CashRegister:
             print("Not valid discount")
 
     def add_item(self, item, price, quantity=1):
-        self.items.append(item)
+        items_to_add = quantity
+        while items_to_add > 0:
+            self.items.append(item)
+            items_to_add -= 1
+
         self.total += price * quantity
         new_item = {"item": item, "price": price, "quantity": quantity}
         self.previous_transactions.append(new_item)
